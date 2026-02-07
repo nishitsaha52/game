@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  valentine-game:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: valentine-game
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+    labels:
+      - "com.valentine.description=Valentine's Day Love Gravity Game"
+      - "com.valentine.version=1.0.0"
