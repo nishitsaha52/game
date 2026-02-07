@@ -322,6 +322,17 @@ class LoveMessage {
     }
 }
 
+/* ───────── COLOR PALETTE ───────── */
+const COLORS = [
+    'rgb(255, 77, 109)',    // Hot Pink
+    'rgb(255, 105, 135)',   // Light Pink
+    'rgb(255, 51, 102)',    // Rose
+    'rgb(200, 87, 255)',    // Purple
+    'rgb(255, 102, 178)',   // Magenta
+    'rgb(220, 60, 120)',    // Deep Rose
+    'rgb(255, 140, 180)',   // Soft Pink
+];
+
 /* ───────── MAIN COMPONENT ───────── */
 export default function GravityPlayground() {
     const canvasRef = useRef(null);
@@ -332,16 +343,6 @@ export default function GravityPlayground() {
     const [orbCount, setOrbCount] = useState(0);
     const [gravity, setGravity] = useState(0.5);
     const [matchCount, setMatchCount] = useState(0);
-
-    const colors = [
-        'rgb(255, 77, 109)',    // Hot Pink
-        'rgb(255, 105, 135)',   // Light Pink
-        'rgb(255, 51, 102)',    // Rose
-        'rgb(200, 87, 255)',    // Purple
-        'rgb(255, 102, 178)',   // Magenta
-        'rgb(220, 60, 120)',    // Deep Rose
-        'rgb(255, 140, 180)',   // Soft Pink
-    ];
 
     useEffect(() => {
         const canvas = canvasRef.current;
@@ -415,7 +416,7 @@ export default function GravityPlayground() {
             const y = e.clientY - rect.top;
 
             const radius = Math.random() * 20 + 15;
-            const color = colors[Math.floor(Math.random() * colors.length)];
+            const color = COLORS[Math.floor(Math.random() * COLORS.length)];
 
             // Random initial velocity
             const angle = Math.random() * Math.PI * 2;
